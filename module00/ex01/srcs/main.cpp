@@ -6,7 +6,7 @@
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 12:06:00 by shonakam          #+#    #+#             */
-/*   Updated: 2025/03/12 05:10:11 by shonakam         ###   ########.fr       */
+/*   Updated: 2025/03/12 05:31:31 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@
 // 	std::cout << "Test data loaded from " << filename << std::endl;
 // }
 
-int	main() {
+int	main(void) {
 	PhoneBook	phoneBook;
 	std::string	command;
 

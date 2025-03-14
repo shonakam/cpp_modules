@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/10 17:11:08 by shonakam          #+#    #+#             */
-/*   Updated: 2025/03/12 05:53:39 by shonakam         ###   ########.fr       */
+/*   Created: 2025/03/12 05:57:25 by shonakam          #+#    #+#             */
+/*   Updated: 2025/03/12 06:00:13 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_HPP
-# define UTILS_HPP
+#include "Zombie.hpp"
 
-# include <string>
-# include <iostream>
-# include <istream>
-# include <cstdlib> 
+Zombie*	zombieHorde(int N, std::string name) {
+	if (N <= 0) return NULL;
 
-std::string		trim(const std::string& str);
-std::string		strShorten(const std::string &str, unsigned int from = 9);
-void			checkEOF(std::istream& in);
+	Zombie*	horde = new Zombie[N];
+	for (int i = 0; i < N; i++) horde[i].setName(name);
+	return horde;
+}
 
-#endif
+int main() {
+	int N = 5;
+	Zombie* horde = zombieHorde(N, "HordeZombie");
+
+	for (int i = 0; i < N; i++) horde[i].announce();
+	delete[] horde;
+}

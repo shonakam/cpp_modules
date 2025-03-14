@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.hpp                                          :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/10 17:11:08 by shonakam          #+#    #+#             */
-/*   Updated: 2025/03/12 05:53:39 by shonakam         ###   ########.fr       */
+/*   Created: 2025/03/14 12:36:17 by shonakam          #+#    #+#             */
+/*   Updated: 2025/03/14 12:45:26 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_HPP
-# define UTILS_HPP
+#ifndef HARL_HPP
+# define HARL_HPP
 
-# include <string>
-# include <iostream>
-# include <istream>
-# include <cstdlib> 
+#include <string>
+#include <iostream>
 
-std::string		trim(const std::string& str);
-std::string		strShorten(const std::string &str, unsigned int from = 9);
-void			checkEOF(std::istream& in);
+class Harl {
+	private:
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
+
+	public:
+		Harl();
+		~Harl();
+		void	complain(std::string level);
+};
 
 #endif

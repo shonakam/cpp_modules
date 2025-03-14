@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.hpp                                          :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/10 17:11:08 by shonakam          #+#    #+#             */
-/*   Updated: 2025/03/12 05:53:39 by shonakam         ###   ########.fr       */
+/*   Created: 2025/03/12 13:49:53 by shonakam          #+#    #+#             */
+/*   Updated: 2025/03/14 11:27:39 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_HPP
-# define UTILS_HPP
+#ifndef HUMAN_A_HPP
+# define HUMAN_A_HPP
 
-# include <string>
+# include "Weapon.hpp"
 # include <iostream>
-# include <istream>
-# include <cstdlib> 
 
-std::string		trim(const std::string& str);
-std::string		strShorten(const std::string &str, unsigned int from = 9);
-void			checkEOF(std::istream& in);
+class	HumanA {
+	private:
+		std::string	_name;
+		Weapon		&_weapon;
+
+	public:
+		HumanA(std::string name, Weapon& weapon);
+		~HumanA(void);
+		void		setName(std::string name);
+		std::string	getName(void) const;
+		Weapon		&getWeapon(void) const;
+		void		attack(void) const;
+};
 
 #endif

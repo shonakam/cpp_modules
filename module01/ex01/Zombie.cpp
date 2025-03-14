@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.hpp                                          :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/10 17:11:08 by shonakam          #+#    #+#             */
-/*   Updated: 2025/03/12 05:53:39 by shonakam         ###   ########.fr       */
+/*   Created: 2025/03/12 05:57:38 by shonakam          #+#    #+#             */
+/*   Updated: 2025/03/12 06:02:17 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_HPP
-# define UTILS_HPP
+#include "Zombie.hpp"
 
-# include <string>
-# include <iostream>
-# include <istream>
-# include <cstdlib> 
+Zombie::Zombie() {}
 
-std::string		trim(const std::string& str);
-std::string		strShorten(const std::string &str, unsigned int from = 9);
-void			checkEOF(std::istream& in);
+Zombie::~Zombie() {
+	std::cout << name << " has been destroyed." << std::endl;
+}
 
-#endif
+void	Zombie::setName(std::string name) {
+	this->name = name;
+}
+
+void	Zombie::announce() const {
+	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}

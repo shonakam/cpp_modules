@@ -6,7 +6,7 @@
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 12:51:50 by shonakam          #+#    #+#             */
-/*   Updated: 2025/03/14 13:00:34 by shonakam         ###   ########.fr       */
+/*   Updated: 2025/03/14 13:12:33 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ std::string trim(const std::string& str) {
 int	main() {
 	Harl	harl;
 	std::string	level;
-	
+
 	while (true) {
 		std::cout << "Please enter LEVEL (DEBUG, INFO, WARNING, ERROR):";
 		getline(std::cin, level);

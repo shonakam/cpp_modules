@@ -6,7 +6,7 @@
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 05:23:38 by shonakam          #+#    #+#             */
-/*   Updated: 2025/03/12 06:02:30 by shonakam         ###   ########.fr       */
+/*   Updated: 2025/03/15 15:33:53 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class Zombie {
 	private:
-		std::string	name;
+		std::string	_name;
 
 	public:
 		Zombie();

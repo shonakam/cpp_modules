@@ -6,17 +6,16 @@
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 13:28:07 by shonakam          #+#    #+#             */
-/*   Updated: 2025/03/15 15:01:12 by shonakam         ###   ########.fr       */
+/*   Updated: 2025/03/15 22:53:57 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed() : _fixed(0) {
+Fixed::Fixed(void) : _fixed(0) {
 	std::cout << GREEN << "[call]" << RESET;
 	std::cout << ": default constructor" << std::endl;
 }
-
 
 Fixed::Fixed(const Fixed &other) {
 	std::cout << GREEN << "[call]" << RESET;
@@ -28,7 +27,7 @@ Fixed::Fixed(const Fixed &other) {
 Fixed	&Fixed::operator=(const Fixed &other) {
 	std::cout << GREEN << "[call]" << RESET;
 	std::cout << ": copy assignment operator" << std::endl;
-	
+
 	if (this != &other) this->_fixed = other.getRawBits();
 	return *this;
 }

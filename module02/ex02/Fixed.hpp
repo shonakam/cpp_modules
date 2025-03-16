@@ -6,7 +6,7 @@
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 13:26:58 by shonakam          #+#    #+#             */
-/*   Updated: 2025/03/15 21:47:36 by shonakam         ###   ########.fr       */
+/*   Updated: 2025/03/15 22:57:30 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,14 @@ class Fixed {
 		void				_calledLog(const std::string &target);
 
 	public:
-		Fixed();
+		/* <===  Orthodox Canonical Form  ===> */
+		Fixed(void);
 		Fixed(const Fixed &other);
-		Fixed &operator=(const Fixed &other);
+		Fixed	&operator=(const Fixed &other);
+		~Fixed(void);
+		// ==  Additional Constractor  ==========
 		Fixed(const int intValue);
 		Fixed(const float floatValue);
-		~Fixed();
 
 		int					getRawBits(void) const;
 		void				setRawBits(const int raw);
@@ -70,7 +72,5 @@ class Fixed {
 
 /* <=== OVERLOADS ===> */
 std::ostream	&operator<<(std::ostream &os, const Fixed &fixed);
-
-
 
 #endif

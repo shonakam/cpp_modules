@@ -1,47 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/14 13:26:58 by shonakam          #+#    #+#             */
-/*   Updated: 2025/03/15 22:57:49 by shonakam         ###   ########.fr       */
+/*   Created: 2025/03/15 22:30:54 by shonakam          #+#    #+#             */
+/*   Updated: 2025/03/15 22:54:33 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
 # define RED "\033[31m"
 # define GREEN "\033[32m"
 # define YELLOW "\033[33m"
 # define RESET "\033[0m"
 
+# include <string>
 # include <iostream>
-# include <cmath>
 
-class Fixed {
+class ClapTrap {
 	private:
-		static const int	_fractionalBits = 8;
-		int					_fixed;
+		std::string	_name;
+		int			_hitPoints;
+		int			_energyPoints;
+		int			_attackDamage;
+		void		_calledLog(const std::string &target);
 
 	public:
 		/* <===  Orthodox Canonical Form  ===> */
-		Fixed(void);
-		Fixed(const Fixed &other);
-		Fixed	&operator=(const Fixed &other);
-		~Fixed(void);
+		ClapTrap(void);
+		ClapTrap(const ClapTrap &other);
+		ClapTrap	&operator=(const ClapTrap &other);
+		~ClapTrap(void);
 		// ==  Additional Constractor  ==========
-		Fixed(const int intValue);
-		Fixed(const float floatValue);
+		ClapTrap(std::string name);
 
-		int		getRawBits(void) const;
-		void	setRawBits(const int raw);
-		float	toFloat(void) const;
-		int		toInt(void) const;
+		void	attack(std::string const &target);
+		void	takeDamage(unsigned int amount);
+		void	beRepaired(unsigned int amount);
 };
-
-std::ostream	&operator<<(std::ostream &os, const Fixed &fixed);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 13:26:58 by shonakam          #+#    #+#             */
-/*   Updated: 2025/03/15 14:21:16 by shonakam         ###   ########.fr       */
+/*   Updated: 2025/03/15 22:58:00 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,12 @@ class Fixed {
 		int					_fixed;
 
 	public:
-		Fixed();
+		/* <===  Orthodox Canonical Form  ===> */
+		Fixed(void);
 		Fixed(const Fixed &other);
-		Fixed &operator=(const Fixed &other);
-		~Fixed(); 
+		Fixed	&operator=(const Fixed &other);
+		~Fixed(void);
+		// ==  Additional Constractor  ==========
 
 		int		getRawBits(void) const;
 		void	setRawBits(const int raw);

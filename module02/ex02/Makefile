@@ -6,7 +6,7 @@
 #    By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/09 03:21:52 by shonakam          #+#    #+#              #
-#    Updated: 2025/03/15 13:49:05 by shonakam         ###   ########.fr        #
+#    Updated: 2025/03/15 22:25:21 by shonakam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,9 +37,17 @@ fclean: clean
 
 re: fclean all
 
+header: HEADERS := $(shell find $(SRCS_DIR) -type f | grep "\.hpp$$")
+header:
+	@for header in $(HEADERS); do \
+		echo "Compiling $$header..."; \
+		$(CXX) $(CXXFLAGS) -c $$header -o /dev/null || { echo "❌ Error in $$header"; exit 1; }; \
+	done
+	@echo "✅ All headers compiled successfully!"
+
 # Any non-standard extensions (such as GNU-specific features) are treated as errors.
 debug: CXXFLAGS	= -std=c++98 -I./includes -pedantic-errors
 debug: re
 	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME)
 
-.PHONY: all clean fclean re debug
+.PHONY: all clean fclean re header debug

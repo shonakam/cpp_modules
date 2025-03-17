@@ -6,7 +6,7 @@
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 22:31:44 by shonakam          #+#    #+#             */
-/*   Updated: 2025/03/18 02:46:56 by shonakam         ###   ########.fr       */
+/*   Updated: 2025/03/18 02:47:10 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	{ std::cout << "ClapTrap " << _name << " is out of HP and cannot repair itself!" << std::endl; return ; }
 	if (this->_energyPoints <= 0)
 	{ std::cout << "ClapTrap " << _name << " is out of energy and cannot repair itself!" << std::endl; return ; }
+
 	_hitPoints += amount;
 	_energyPoints--;
 	std::cout << "ClapTrap " << _name << " repairs itself for " << amount 

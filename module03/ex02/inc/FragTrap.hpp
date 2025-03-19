@@ -6,7 +6,7 @@
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 03:10:05 by shonakam          #+#    #+#             */
-/*   Updated: 2025/03/18 03:20:57 by shonakam         ###   ########.fr       */
+/*   Updated: 2025/03/18 03:37:11 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ class FragTrap : public ClapTrap
 		FragTrap	&operator=(const FragTrap &other);
 		~FragTrap(void);
 
-		void highFivesGuys(void);
+		void	attack(const std::string &target);
+		void	highFivesGuys(void);
 };
 
 #endif

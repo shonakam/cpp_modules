@@ -6,7 +6,7 @@
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 13:48:30 by shonakam          #+#    #+#             */
-/*   Updated: 2025/03/15 22:10:20 by shonakam         ###   ########.fr       */
+/*   Updated: 2025/03/18 14:32:50 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,15 +66,19 @@ void runAllTests() {
 }
 
 int	main(void) {
-	Fixed a;
-	Fixed const b(Fixed(5.05f) * Fixed(2));
+	// Fixed a;
+	// Fixed const b(Fixed(5.05f) * Fixed(2));
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
+	// std::cout << a << std::endl;
+	// std::cout << ++a << std::endl;
+	// std::cout << a << std::endl;
+	// std::cout << a++ << std::endl;
+	// std::cout << a << std::endl;
+	// std::cout << b << std::endl;
+	// std::cout << Fixed::max( a, b ) << std::endl;
+    std::cout << Fixed(10) + Fixed(5) << std::endl;
+    std::cout << Fixed(5) - Fixed(10) << std::endl;
+    std::cout << Fixed(10) * Fixed(2) << std::endl;
+    std::cout << Fixed(10) / Fixed(-2) << std::endl;
 	// runAllTests();
 }

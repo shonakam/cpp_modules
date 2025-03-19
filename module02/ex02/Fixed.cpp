@@ -6,7 +6,7 @@
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 13:28:07 by shonakam          #+#    #+#             */
-/*   Updated: 2025/03/15 22:13:00 by shonakam         ###   ########.fr       */
+/*   Updated: 2025/03/18 14:31:02 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ void	Fixed::_calledLog(const std::string &target) {
 
 Fixed::Fixed() : _fixed(0) { _calledLog(": default constructor"); }
 
-Fixed::Fixed(const Fixed &other) {
-	_calledLog(": copy constructor");
-	*this = other;
-}
+Fixed::Fixed(const Fixed &other) : _fixed(other._fixed) { _calledLog(": copy constructor"); }
 
 Fixed	&Fixed::operator=(const Fixed &other) {
 	_calledLog(": copy assignment operator");
@@ -56,8 +53,8 @@ bool	Fixed::operator==(const Fixed &other) const { return this->_fixed == other.
 bool	Fixed::operator!=(const Fixed &other) const { return this->_fixed != other.getRawBits(); }
 
 /* OVERLOADS: arithmetic operators */
-Fixed	Fixed::operator+(const Fixed &other) const { return Fixed(this->_fixed + other.getRawBits()); }
-Fixed	Fixed::operator-(const Fixed &other) const { return Fixed(this->_fixed - other.getRawBits()); }
+Fixed	Fixed::operator+(const Fixed &other) const { return Fixed(toFloat() + other.toFloat()); }
+Fixed	Fixed::operator-(const Fixed &other) const { return Fixed(toFloat() - other.toFloat()); }
 Fixed	Fixed::operator*(const Fixed &other) const { return Fixed(this->toFloat() * other.toFloat()); }
 // https://en.wikipedia.org/wiki/IEEE_754#Exception_handling
 Fixed	Fixed::operator/(const Fixed &other) const {

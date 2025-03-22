@@ -6,11 +6,11 @@
 #    By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/09 03:21:52 by shonakam          #+#    #+#              #
-#    Updated: 2025/03/18 03:10:47 by shonakam         ###   ########.fr        #
+#    Updated: 2025/03/22 17:17:52 by shonakam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := claptrap
+NAME := scavtrap
 
 CXX := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98 -I./inc

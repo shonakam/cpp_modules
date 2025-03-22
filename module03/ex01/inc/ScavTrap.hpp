@@ -6,7 +6,7 @@
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 00:25:37 by shonakam          #+#    #+#             */
-/*   Updated: 2025/03/18 03:10:42 by shonakam         ###   ########.fr       */
+/*   Updated: 2025/03/22 17:11:34 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@
 
 class ScavTrap : public ClapTrap
 {
-	private:
-		ScavTrap(void);
-
 	public:
+		ScavTrap(void);
 		ScavTrap(std::string name);
 		ScavTrap(const ScavTrap &other);
 		ScavTrap	&operator=(const ScavTrap &other);

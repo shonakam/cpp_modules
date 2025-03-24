@@ -6,7 +6,7 @@
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 22:30:12 by shonakam          #+#    #+#             */
-/*   Updated: 2025/03/18 03:33:32 by shonakam         ###   ########.fr       */
+/*   Updated: 2025/03/22 17:19:50 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,13 @@ void test(FragTrap &frag)
 	frag.beRepaired(5);
 }
 
-void	testConstructorDestructorHeap(void)
-{
-	std::cout << "\n=== Testing Heap Constructor & Destructor ===" << std::endl;
-	FragTrap* heapFrag = new FragTrap(setColor("Heap"));
-	test(*heapFrag);
-	delete heapFrag;
-}
+// void	testConstructorDestructorHeap(void)
+// {
+// 	std::cout << "\n=== Testing Heap Constructor & Destructor ===" << std::endl;
+// 	FragTrap* heapFrag = new FragTrap(setColor("Heap"));
+// 	test(*heapFrag);
+// 	delete heapFrag;
+// }
 
 void	testConstructorDestructorStack()
 {
@@ -62,7 +62,7 @@ int main(void)
 {
 	std::cout << "=== Creating ScavTrap ===" << std::endl;
 	testConstructorDestructorStack();
-	testConstructorDestructorHeap();
+	// testConstructorDestructorHeap();
 	std::cout << "\n=== Destroying Objects ===" << std::endl;
 }
 

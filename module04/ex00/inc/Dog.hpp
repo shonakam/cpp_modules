@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/18 03:10:05 by shonakam          #+#    #+#             */
-/*   Updated: 2025/03/22 17:15:12 by shonakam         ###   ########.fr       */
+/*   Created: 2025/03/24 15:00:03 by shonakam          #+#    #+#             */
+/*   Updated: 2025/03/24 15:08:12 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-# include "ClapTrap.hpp"
+# include "Animal.hpp"
 
-class FragTrap : public ClapTrap
-{
+class Dog : public Animal {
 	public:
-		FragTrap(void);
-		FragTrap(std::string name);
-		FragTrap(const FragTrap &other);
-		FragTrap	&operator=(const FragTrap &other);
-		~FragTrap(void);
+		/* <===  Orthodox Canonical Class Form  ===> */
+		Dog(void);
+		virtual	~Dog(void);
+		Dog		&operator=(const Dog &other);
+		Dog(const Dog &other);
 
-		void	attack(const std::string &target);
-		void	highFivesGuys(void);
+		void	makeSound(void) const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 22:30:12 by shonakam          #+#    #+#             */
-/*   Updated: 2025/03/18 02:49:53 by shonakam         ###   ########.fr       */
+/*   Updated: 2025/03/22 17:13:00 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,16 @@ static void			test(ClapTrap &clap)
 	clap.beRepaired(5);
 }
 
-static void			mineuchi(ClapTrap &clap) { clap.takeDamage(9); }
-static void			repair(ClapTrap &clap) { for(int i = 0; i < 12; i++) clap.beRepaired(3); }
-static void			kill(ClapTrap &clap) { for(int i = 0; i < 12; i++) clap.takeDamage(3); }
-static void			zeroHpMove(ClapTrap &clap) { clap.attack(setColor("enemy")); clap.takeDamage(10); clap.beRepaired(200); }
+// static void			mineuchi(ClapTrap &clap) { clap.takeDamage(9); }
+// static void			repair(ClapTrap &clap) { for(int i = 0; i < 12; i++) clap.beRepaired(3); }
+// static void			kill(ClapTrap &clap) { for(int i = 0; i < 12; i++) clap.takeDamage(3); }
+// static void			zeroHpMove(ClapTrap &clap) { clap.attack(setColor("enemy")); clap.takeDamage(10); clap.beRepaired(200); }
 
 int	main(void)
 {
 	ClapTrap clap1(setColor("Alice"));
 	ClapTrap clap2(setColor("Bob"));
-	ClapTrap *heapClap = new ClapTrap(setColor("Heap"));
+	// ClapTrap *heapClap = new ClapTrap(setColor("Heap"));
 	
 	printLine();
 	test(clap1);
@@ -42,18 +42,18 @@ int	main(void)
 	test(clap2);
 	printLine();
 
-	ClapTrap clap3 = clap1;
-	clap2 = clap1;
+	// ClapTrap clap3 = clap1;
+	// clap2 = clap1;
 
-	printLine();
-	test(clap2);
-	printLine();
-	test(clap3);
+	// printLine();
+	// test(clap2);
+	// printLine();
+	// test(clap3);
 
-	printLine();
-	mineuchi(*heapClap);
-	repair(*heapClap);
-	kill(*heapClap);
-	zeroHpMove(*heapClap);
-	delete heapClap;
+	// printLine();
+	// mineuchi(*heapClap);
+	// repair(*heapClap);
+	// kill(*heapClap);
+	// zeroHpMove(*heapClap);
+	// delete heapClap;
 }

@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/18 03:10:05 by shonakam          #+#    #+#             */
-/*   Updated: 2025/03/22 17:15:12 by shonakam         ###   ########.fr       */
+/*   Created: 2025/03/24 18:14:44 by shonakam          #+#    #+#             */
+/*   Updated: 2025/03/24 18:47:13 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-# include "ClapTrap.hpp"
+# include <iostream>
 
-class FragTrap : public ClapTrap
-{
+class Brain {
+	private:
+		std::string _ideas[100];
+
 	public:
-		FragTrap(void);
-		FragTrap(std::string name);
-		FragTrap(const FragTrap &other);
-		FragTrap	&operator=(const FragTrap &other);
-		~FragTrap(void);
+		Brain(void);
+		virtual	~Brain(void);
+		Brain	&operator=(const Brain &other);
+		Brain(const Brain &other);
 
-		void	attack(const std::string &target);
-		void	highFivesGuys(void);
+		void		setIdeaById(const std::string &idea, int index);
+		std::string	getIdeas(void) const;
+		std::string	getIdeaById(int index) const;
 };
 
 #endif

@@ -6,12 +6,12 @@
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 18:07:47 by shonakam          #+#    #+#             */
-/*   Updated: 2025/03/24 22:47:02 by shonakam         ###   ########.fr       */
+/*   Updated: 2025/03/24 23:12:51 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef AANIMAL_HPP
+# define AANIMAL_HPP
 
 # define RED "\033[31m"
 # define GREEN "\033[32m"
@@ -34,6 +34,7 @@ class AAnimal {
 		AAnimal(const AAnimal &other);
 
 		// https://en.cppreference.com/w/cpp/language/abstract_class
+		// https://cplusplus.com/doc/tutorial/polymorphism/
 		virtual void	makeSound(void) const = 0;
 
 		/* <===  ACCESSERS  ===> */

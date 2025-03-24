@@ -6,13 +6,13 @@
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 18:10:29 by shonakam          #+#    #+#             */
-/*   Updated: 2025/03/24 21:14:22 by shonakam         ###   ########.fr       */
+/*   Updated: 2025/03/24 22:37:41 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat(void): Animal(), _brain(new Brain()) {
+Cat::Cat(void): AAnimal(), _brain(new Brain()) {
 	std::cout << "Cat:	has been created!" << std::endl; setType("Cat");
 }
 
@@ -20,13 +20,14 @@ Cat::~Cat(void) {
 	delete _brain;
 	std::cout << "Cat:	has been destroyed!" << std::endl;
 }
-Cat::Cat(const Cat &other) : Animal(other) { 
+
+Cat::Cat(const Cat &other) : AAnimal(other) { 
 	_brain = new Brain(*other._brain);
 }
 
 Cat	&Cat::operator=(const Cat &other) {
 	if (this != &other) {
-		Animal::operator=(other);
+		AAnimal::operator=(other);
 		delete _brain;
 		_brain = new Brain(*other._brain);
 	}

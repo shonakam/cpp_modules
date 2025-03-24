@@ -6,15 +6,13 @@
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 18:00:49 by shonakam          #+#    #+#             */
-/*   Updated: 2025/03/24 22:22:40 by shonakam         ###   ########.fr       */
+/*   Updated: 2025/03/24 22:37:26 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 
 // static std::string	setColor(const std::string &name) { return (YELLOW + name + RESET); }
 

@@ -6,7 +6,7 @@
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 18:07:47 by shonakam          #+#    #+#             */
-/*   Updated: 2025/03/24 22:32:48 by shonakam         ###   ########.fr       */
+/*   Updated: 2025/03/24 22:47:02 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class AAnimal {
 		AAnimal	&operator=(const AAnimal &other);
 		AAnimal(const AAnimal &other);
 
-		// pure virtual function
+		// https://en.cppreference.com/w/cpp/language/abstract_class
 		virtual void	makeSound(void) const = 0;
 
 		/* <===  ACCESSERS  ===> */

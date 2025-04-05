@@ -6,16 +6,16 @@
 #    By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/09 03:21:52 by shonakam          #+#    #+#              #
-#    Updated: 2025/04/05 23:38:57 by shonakam         ###   ########.fr        #
+#    Updated: 2025/04/05 23:40:48 by shonakam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # --== Files ==--
 # main.cpp
 # Bureaucrat.cpp
-#
+# Form.cpp
 
-NAME := bureaucrat
+NAME := formup
 
 INC_DIR := .
 SRCS_DIR := .

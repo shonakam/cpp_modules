@@ -6,7 +6,7 @@
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 00:47:47 by shonakam          #+#    #+#             */
-/*   Updated: 2025/04/06 00:01:24 by shonakam         ###   ########.fr       */
+/*   Updated: 2025/04/06 00:31:46 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 
 # include <iostream>
 
+class Form;
 class Bureaucrat {
 	private:
 		const std::string	_name;
@@ -44,6 +45,7 @@ class Bureaucrat {
 		/* <===  Member Functions  ===> */
 		void				incrementGrade(void);
 		void				decrementGrade(void);
+		void				signForm(Form &form);
 
 		/* <===  Exceptions  ===> */
 		class GradeTooHighException : public std::exception {

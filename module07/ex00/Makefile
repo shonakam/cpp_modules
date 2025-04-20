@@ -6,7 +6,7 @@
 #    By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/09 03:21:52 by shonakam          #+#    #+#              #
-#    Updated: 2025/04/19 22:12:29 by shonakam         ###   ########.fr        #
+#    Updated: 2025/04/19 22:31:12 by shonakam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,6 @@ re: fclean all
 
 # Any non-standard extensions (such as GNU-specific features) are treated as errors.
 debug: CXXFLAGS	= -std=c++98 -pedantic-errors -I$(INC_DIR)
-debug: re
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME)
+debug: re; valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME); fclean
 
 .PHONY: all clean fclean re debug

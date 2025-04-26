@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   Iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/19 21:44:10 by shonakam          #+#    #+#             */
-/*   Updated: 2025/04/26 22:06:08 by shonakam         ###   ########.fr       */
+/*   Created: 2025/04/26 21:44:23 by shonakam          #+#    #+#             */
+/*   Updated: 2025/04/26 22:13:33 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+#include <cstddef>
 
-namespace ft { 
+namespace ft {
 	template <typename T>
-	void	swap(T& a, T& b) {
-		T tmp = a;
-		a = b;
-		b = tmp;
+	void	iter(T* array, size_t length, void (*func)(T&)) {
+		if (!array || !func) { return ; }
+		for (size_t i = 0; i < length; ++i) func(array[i]);
 	}
 
-	template <typename U>
-	const U&	min(const U& a, const U& b) {
-		return ((a < b) ? a : b);
-	}
-
-	template <typename V>
-	const V&	max(const V& a, const V& b) {
-		return ((a > b) ? a : b);
+	template <typename T>
+	void	iter(const T* array, size_t length, void (*func)(const T&)) {
+		if (!array || !func) { return ; }
+		for (size_t i = 0; i < length; ++i) func(array[i]);
 	}
 }

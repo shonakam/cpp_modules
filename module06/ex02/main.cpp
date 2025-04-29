@@ -6,7 +6,7 @@
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 21:16:08 by shonakam          #+#    #+#             */
-/*   Updated: 2025/04/14 21:42:01 by shonakam         ###   ########.fr       */
+/*   Updated: 2025/04/27 19:51:39 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,17 @@ void	identify(Base *p) {
 
 void	identify(Base& p) {
 	try { 
-		dynamic_cast<A&>(p);
+		(void)dynamic_cast<A&>(p);
 		std::cout << "Identified: A\n";
 		return ;
 	} catch (...) {}
 	try {
-		dynamic_cast<B&>(p);
+		(void)dynamic_cast<B&>(p);
 		std::cout << "Identified: B\n";
 		return ;
 	} catch (...) {}
 	try {
-		dynamic_cast<C&>(p);
+		(void)dynamic_cast<C&>(p);
 		std::cout << "Identified: C\n";
 		return ;
 	} catch (...) {}

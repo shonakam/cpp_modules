@@ -6,7 +6,7 @@
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 11:37:26 by shonakam          #+#    #+#             */
-/*   Updated: 2025/05/10 12:10:27 by shonakam         ###   ########.fr       */
+/*   Updated: 2025/05/10 15:05:18 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class Span {
 	
 	public:
 		Span(unsigned int N);
-		Span(const Span& other);
-		Span& operator=(const Span& other);
+		Span(const	Span& other);
+		Span&		operator=(const Span& other);
 		~Span();
 	
 		void	addNumber(int number);

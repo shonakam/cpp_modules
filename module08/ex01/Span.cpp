@@ -6,7 +6,7 @@
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 11:37:17 by shonakam          #+#    #+#             */
-/*   Updated: 2025/05/10 12:44:54 by shonakam         ###   ########.fr       */
+/*   Updated: 2025/05/10 15:42:38 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,11 @@
 // ==== OCCF ==================================================================
 
 Span::Span() : _maxSize(0) {}
-Span::Span(unsigned int n) : _maxSize(n) {}
+Span::Span(unsigned int N) : _maxSize(N) {
+	if (N == 0)
+		throw std::runtime_error("Span size cannot be zero");
+	_numbers.reserve(N);
+}
 Span::Span(const Span& other) : _maxSize(other._maxSize), _numbers(other._numbers) {}
 Span& Span::operator=(const Span& other) {
 	if (this != &other) {

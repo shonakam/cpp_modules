@@ -6,7 +6,7 @@
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 15:58:03 by shonakam          #+#    #+#             */
-/*   Updated: 2025/05/10 21:34:56 by shonakam         ###   ########.fr       */
+/*   Updated: 2025/05/10 22:01:12 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
  * MutantStack is a subclass of std::stack that provides an iterator interface
  * https://en.cppreference.com/w/cpp/container/stack
  * follow -> https://cplusplus.com/reference/stack/stack/
+ * this->c is the protected: container_type c; (stack::container_type)
  */
 template <typename T, typename Container = std::deque<T> >
 class MutantStack : public std::stack<T, Container> {

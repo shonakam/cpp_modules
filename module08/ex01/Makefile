@@ -6,7 +6,7 @@
 #    By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/09 03:21:52 by shonakam          #+#    #+#              #
-#    Updated: 2025/05/04 12:33:17 by shonakam         ###   ########.fr        #
+#    Updated: 2025/05/10 14:39:24 by shonakam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 # Span.cpp
 #
 
-NAME := span
+NAME := ex01
 
 INC_DIR := .
 SRCS_DIR := .

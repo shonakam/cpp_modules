@@ -6,12 +6,12 @@
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 11:40:49 by shonakam          #+#    #+#             */
-/*   Updated: 2025/05/04 12:29:12 by shonakam         ###   ########.fr       */
+/*   Updated: 2025/05/10 14:02:42 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <vector>
+#include <list>
 #include "easyfind.hpp"
 
 #define RED "\033[31m"
@@ -20,31 +20,32 @@
 
 #define END 42
 
-void testSuccess(std::vector<int>& vec) {
+void testSuccess(std::list<int>& lst) {
 	try {
-		std::vector<int>::iterator it = easyfind(vec, END - 1);
+		std::list<int>::iterator it = easyfind(lst, END - 1);
 		std::cout << GREEN << "[Success] Found: " << *it << RESET << std::endl;
 	} catch (std::exception& e) {
 		std::cout << RED << "[Success] Error: " << e.what() << RESET << std::endl;
 	}
 }
 
-
-void testFailure(std::vector<int>& vec) {
+void testFailure(std::list<int>& lst) {
 	try {
-		std::vector<int>::iterator it = easyfind(vec, END);
+		std::list<int>::iterator it = easyfind(lst, END);
 		std::cout << GREEN << "[Failure] Found: " << *it << RESET << std::endl;
 	} catch (std::exception& e) {
 		std::cout << RED << "[Failure] Error: " << e.what() << RESET << std::endl;
 	}
 }
 
+// used container -> list
+// https://cplusplus.com/reference/stl/
 int main() {
-	std::vector<int> vec;
+	std::list<int> lst;
 
 	for (int i = 0; i < END; ++i) {
-		vec.push_back(i);
+		lst.push_back(i);
 	}
-	testSuccess(vec);
-	testFailure(vec);
+	testSuccess(lst);
+	testFailure(lst);
 }

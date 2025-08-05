@@ -1,0 +1,40 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Dockerfile.in                                      :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/03/12 05:40:11 by shonakam          #+#    #+#              #
+#    Updated: 2025/08/06 01:00:04 by shonakam         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+FROM {ARG_FROM} AS builder
+
+ARG FORCE_REBUILD=0
+ARG HASH_BINARY=0
+ARG ARG_PACKAGES
+
+ENV {ARG_ENV=#}
+RUN apt-get update && apt-get install -y ${ARG_PACKAGES} && rm -rf /var/lib/apt/lists/*
+
+COPY .clang-format /.clang-format
+COPY . /src
+
+WORKDIR /src
+
+RUN make
+
+# --------------------------------------------------
+# Runtime stage
+# --------------------------------------------------
+
+FROM {ARG_FROM}
+
+COPY --from=builder /src/{ARG_BIN} /{ARG_BIN}
+
+USER 65535:65535
+ENV HOME=/
+
+ENTRYPOINT ["/{ARG_BIN}"]

@@ -6,7 +6,7 @@
 #    By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/05 22:14:06 by shonakam          #+#    #+#              #
-#    Updated: 2025/08/06 01:10:23 by shonakam         ###   ########.fr        #
+#    Updated: 2025/08/06 22:02:48 by shonakam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,13 +90,11 @@ $(DOCKERFILE_OUT): $(DOCKERFILE_IN)
 
 docker-make: docker-stage
 	docker run --rm -v $(PWD):/src -w /src \
-		$(IMAGE_NAME)-builder \
-		sh -c "make all"
+		$(IMAGE_NAME)-builder sh -c "make all"
 
 docker-run: docker-build
 	docker run --rm -v $(PWD):/src -w /src \
-		$(IMAGE_NAME) \
-		sh -c "make && ./$(NAME)"
+		$(IMAGE_NAME) sh -c "make && ./$(NAME)"
 
 docker-format: docker-stage
 	docker run --rm -v $(PWD):/src -w /src \
@@ -106,8 +104,7 @@ docker-format: docker-stage
 
 docker-debug: docker-stage
 	docker run --rm -v $(PWD):/src -w /src \
-		$(IMAGE_NAME)-builder \
-		sh -c "make debug"
+		$(IMAGE_NAME)-builder sh -c "make debug"
 
 # Any non-standard extensions (such as GNU-specific features) are treated as errors.
 debug: CXXFLAGS	= -std=c++98 -pedantic-errors -I$(INC_DIR)

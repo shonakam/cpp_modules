@@ -1,3 +1,6 @@
 .vscode
 **/**/*.txt
+!module09/ex00/data/input.txt
 **/**/objs
+**/**/.dockerfile*
+.DS_Store

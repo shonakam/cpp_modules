@@ -1,0 +1,68 @@
+- expr: "0"
+  expected_stdout: "0"
+  expected_stderr: ""
+
+- expr: "8 9 * 9 - 9 - 9 - 4 - 1 +"
+  expected_stdout: "42"
+  expected_stderr: ""
+
+- expr: "7 7 * 7 -"
+  expected_stdout: "42"
+  expected_stderr: ""
+
+- expr: "1 2 * 2 / 2 * 2 4 - +"
+  expected_stdout: "0"
+  expected_stderr: ""
+
+- expr: "(1 + 1)"
+  expected_stdout: ""
+  expected_stderr: "Error: invalid input."
+
+- expr: "+"
+  expected_stdout: ""
+  expected_stderr: "Error: insufficient operands."
+
+- expr: "1 + +"
+  expected_stdout: ""
+  expected_stderr: "Error: insufficient operands."
+
+- expr: "1 2 3 +"
+  expected_stdout: ""
+  expected_stderr: "Error: too many operands."
+
+- expr: "4 2"
+  expected_stdout: ""
+  expected_stderr: "Error: too many operands."
+
+- expr: "42 -42 +"
+  expected_stdout: ""
+  expected_stderr: "Error: invalid input."
+
+- expr: "1 1 %"
+  expected_stdout: ""
+  expected_stderr: "Error: invalid input."
+
+- expr: "1 1 + h -"
+  expected_stdout: ""
+  expected_stderr: "Error: invalid input."
+
+- expr: "8 0 /"
+  expected_stdout: ""
+  expected_stderr: "Error: division by zero."
+
+- expr: "1 +"
+  expected_stdout: ""
+  expected_stderr: "Error: insufficient operands."
+
+- expr: "2 4 -"
+  expected_stdout: "-2"
+  expected_stderr: ""
+
+- expr: "5 2 /"
+  expected_stdout: "2.5"
+  expected_stderr: ""
+
+- expr: "0 5 - 2 /"
+  expected_stdout: "-2.5"
+  expected_stderr: ""
+

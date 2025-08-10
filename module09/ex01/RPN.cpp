@@ -6,11 +6,19 @@
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 01:17:10 by shonakam          #+#    #+#             */
-/*   Updated: 2025/08/08 03:33:39 by shonakam         ###   ########.fr       */
+/*   Updated: 2025/08/09 14:16:00 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
+
+RPN::RPN(void) {}
+RPN::~RPN(void) {}
+RPN& RPN::operator=(const RPN& other) {
+  (void)other;
+  return (*this);
+}
+RPN::RPN(const RPN& other) { (void)other; }
 
 double RPN::run(const std::string& input) {
   std::stack<double> operands;

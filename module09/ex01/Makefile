@@ -6,7 +6,7 @@
 #    By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/05 22:14:06 by shonakam          #+#    #+#              #
-#    Updated: 2025/08/08 02:44:10 by shonakam         ###   ########.fr        #
+#    Updated: 2025/08/09 14:05:23 by shonakam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,8 +26,7 @@ SRCS		:= $(shell find $(SRCS_DIR) -type f | grep "\.cpp$$")
 OBJS		:= $(SRCS:%.cpp=$(OBJS_DIR)/%.o)
 
 CXX			:= c++
-# CXXFLAGS	:= -Wall -Wextra -Werror -std=c++98 -I$(INC_DIR)
-CXXFLAGS	:= -std=c++98 -I$(INC_DIR)
+CXXFLAGS	:= -Wall -Wextra -Werror -std=c++98 -I$(INC_DIR)
 
 all: $(NAME)
 

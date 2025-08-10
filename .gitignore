@@ -4,3 +4,4 @@
 **/**/objs
 **/**/.dockerfile*
 .DS_Store
+**/*.html

@@ -8,3 +8,6 @@ source venv/bin/activate
 
 ### 依存ライブラリのインストール
 pip install -r requirements.txt
+
+### 実行
+pytest
